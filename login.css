@@ -1,0 +1,653 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f8fbff 0%, #e8f4fd 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+}
+
+header > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+header strong {
+    font-size: 1.5rem;
+    color: #2c5aa0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: calc(100vh - 140px);
+}
+
+main section {
+    width: 100%;
+    max-width: 450px;
+}
+
+main section > div {
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+main h1 {
+    color: #1f2937;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+main p {
+    color: #6b7280;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 1.5rem;
+}
+
+form > div {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+form > div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+input::placeholder {
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+/* Validation States */
+input.valid {
+    border-color: #10b981;
+    background: #f0fdf4;
+}
+
+input.invalid {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+/* Error Messages */
+.error-message {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: none;
+    font-weight: 500;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Success Message */
+.success-message {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border: 1px solid #10b981;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: #065f46;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+}
+
+.success-message.show {
+    display: block;
+}
+
+/* Password Toggle */
+.password-wrapper {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6b7280;
+    font-size: 1.1rem;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+    color: #374151;
+}
+
+/* Remember Me and Forgot Password */
+form > div:nth-child(3) label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #2563eb;
+}
+
+form > div:nth-child(3) a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+form > div:nth-child(3) a:hover {
+    text-decoration: underline;
+    color: #1d4ed8;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    width: 100%;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    background: #9ca3af;
+}
+
+/* Sign Up Link */
+form + p {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+form + p a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+form + p a:hover {
+    text-decoration: underline;
+    color: #1d4ed8;
+}
+
+/* Medical Disclaimer */
+main section > div > div {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+
+main section > div > div p {
+    color: #92400e;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+}
+
+main section > div > div strong {
+    color: #78350f;
+}
+
+/* Footer */
+footer {
+    background: #1f2937;
+    color: #d1d5db;
+    padding: 2rem 0 1rem;
+    margin-top: auto;
+}
+
+footer > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+footer nav {
+    margin-bottom: 1.5rem;
+}
+
+footer h3 {
+    color: #f9fafb;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+footer nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+footer nav a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+    color: #60a5fa;
+}
+
+footer div:last-child p {
+    color: #9ca3af;
+    font-size: 0.85rem;
+    border-top: 1px solid #374151;
+    padding-top: 1rem;
+    margin: 0;
+}
+
+/* Mobile Responsiveness - Improved Typography and Spacing */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    header > div {
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 0 1.5rem;
+    }
+    
+    header nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    header nav a {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+        min-width: 80px;
+        text-align: center;
+    }
+    
+    main {
+        padding: 1.5rem 1rem;
+        min-height: calc(100vh - 220px);
+    }
+    
+    main section > div {
+        padding: 2.5rem 2rem;
+        border-radius: 12px;
+    }
+    
+    main h1 {
+        font-size: 1.875rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    main p {
+        font-size: 1.05rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    /* Better form spacing on mobile */
+    form > div {
+        margin-bottom: 1.75rem;
+    }
+    
+    form > div:nth-child(3) {
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: flex-start;
+        margin-bottom: 2.25rem;
+    }
+    
+    label {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    input[type="email"],
+    input[type="password"] {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+    
+    button[type="submit"] {
+        padding: 1.125rem;
+        font-size: 1.125rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
+    
+    .error-message {
+        font-size: 0.9rem;
+        margin-top: 0.75rem;
+    }
+    
+    /* Better disclaimer spacing */
+    main section > div > div {
+        padding: 1.25rem;
+        margin-top: 2rem;
+        border-radius: 10px;
+    }
+    
+    main section > div > div p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    footer nav ul {
+        gap: 1.5rem;
+    }
+    
+    footer nav a {
+        font-size: 0.95rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header > div {
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+    
+    header strong {
+        font-size: 1.375rem;
+    }
+    
+    header nav ul {
+        gap: 0.75rem;
+    }
+    
+    header nav a {
+        padding: 0.625rem 1rem;
+        font-size: 0.9rem;
+        min-width: 70px;
+    }
+    
+    main {
+        padding: 1rem 0.75rem;
+    }
+    
+    main section > div {
+        padding: 2rem 1.5rem;
+    }
+    
+    main h1 {
+        font-size: 1.75rem;
+    }
+    
+    main p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Optimized form elements for very small screens */
+    form > div {
+        margin-bottom: 1.5rem;
+    }
+    
+    label {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    input[type="email"],
+    input[type="password"] {
+        padding: 0.875rem 1rem;
+        font-size: 1rem; /* Prevent zoom */
+        border-radius: 8px;
+    }
+    
+    button[type="submit"] {
+        padding: 1rem;
+        font-size: 1.05rem;
+        border-radius: 8px;
+    }
+    
+    /* Remember me section */
+    form > div:nth-child(3) {
+        gap: 1rem;
+        margin-bottom: 1.75rem;
+    }
+    
+    form > div:nth-child(3) label {
+        font-size: 0.875rem;
+    }
+    
+    form > div:nth-child(3) a {
+        font-size: 0.875rem;
+    }
+    
+    /* Better error message positioning */
+    .error-message {
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+    }
+    
+    /* Improved disclaimer for small screens */
+    main section > div > div {
+        padding: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    main section > div > div p {
+        font-size: 0.85rem;
+    }
+    
+    /* Footer improvements */
+    footer {
+        padding: 1.5rem 0 1rem;
+    }
+    
+    footer > div {
+        padding: 0 1rem;
+    }
+    
+    footer h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    footer nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    footer nav a {
+        font-size: 0.9rem;
+    }
+    
+    footer div:last-child p {
+        font-size: 0.8rem;
+        padding-top: 0.75rem;
+    }
+}
+
+/* Extra small devices (320px and below) */
+@media (max-width: 320px) {
+    main section > div {
+        padding: 1.5rem 1rem;
+        margin: 0 0.5rem;
+    }
+    
+    main h1 {
+        font-size: 1.625rem;
+    }
+    
+    input[type="email"],
+    input[type="password"] {
+        padding: 0.75rem 0.875rem;
+    }
+    
+    button[type="submit"] {
+        padding: 0.875rem;
+        font-size: 1rem;
+    }
+}
+
+/* Focus Visible for Better Accessibility */
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading State Animation */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}

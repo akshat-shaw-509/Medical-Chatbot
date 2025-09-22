@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Medical Chatbot</title>
+    <link rel="stylesheet" href="chat.css">
+    </head>
+<body>
+    <div class="chat-app">
+        <!-- Mobile sidebar toggle button -->
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        
+        <!-- Sidebar overlay for mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">
+                    <span class="sidebar-title-icon">🏥</span>
+                    Medical AI
+                </h2>
+                <button class="new-chat-btn" id="newChatBtn">
+                    <span>➕</span>
+                    New Conversation
+                </button>
+            </div>
+
+            <div class="chat-history" id="chatHistory">
+                <div class="history-section-title">Recent Chats</div>
+                
+                <!-- Empty state for chat history -->
+                <div class="chat-history-empty" id="chatHistoryEmpty">
+                    <p>Your conversation history will appear here once you start chatting.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content area -->
+        <div class="main-content">
+            <!-- Header with medical disclaimer -->
+            <div class="chat-header">
+                <p class="disclaimer">
+                    <span>⚠️</span>
+                    This is an AI assistant. Not a substitute for professional medical advice. Always consult healthcare professionals.
+                </p>
+            </div>
+
+            <!-- Main chat container -->
+            <div class="chat-container">
+                <!-- Messages area -->
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Empty state -->
+                    <div class="chat-empty" id="emptyState">
+                        <div class="chat-empty-icon">🏥</div>
+                        <h3>AI Medical Assistant</h3>
+                        <p>Hello! I'm here to provide general health information and guidance. Please describe your symptoms or health concerns, and I'll do my best to help you understand your situation better.</p>
+                    </div>
+                </div>
+
+                <!-- Typing indicator -->
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="message-header">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-author">AI Assistant</div>
+                    </div>
+                    <div class="typing-content">
+                        <span>Analyzing your symptoms</span>
+                        <div class="typing-dots">
+                            <span class="typing-dot typing-dot-1"></span>
+                            <span class="typing-dot typing-dot-2"></span>
+                            <span class="typing-dot typing-dot-3"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input area -->
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        class="message-input" 
+                        placeholder="Describe your symptoms or ask a health question..."
+                        rows="1"
+                        aria-label="Message input"
+                    ></textarea>
+                    <div class="input-controls">
+                        <button id="voiceButton" class="voice-button" title="Voice input" aria-label="Voice input">
+                            🎤
+                        </button>
+                        <button id="sendButton" class="send-button" title="Send message" aria-label="Send message">
+                            ➤
+                        </button>
+                    </div>
+                    <div class="voice-feedback" id="voiceFeedback">Listening...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="chat.js" defer></script>
+</html>
